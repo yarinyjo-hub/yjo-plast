@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YJO PLAST | יבוא חומרי גלם לפלסטיק למפעלים</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&family=Assistant:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F6F7F9;
+    --surface:#FFFFFF;
+    --ink:#131C27;
+    --steel:#5B6779;
+    --navy:#0B3B66;
+    --navy-deep:#082A4A;
+    --blue:#1768C7;
+    --blue-bright:#2C86EF;
+    --amber:#D98E2B;
+    --green:#22A559;
+    --line:#E2E6EC;
+    --radius:14px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--ink);font-family:'Assistant',sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,.display{font-family:'Heebo',sans-serif;font-weight:800;letter-spacing:-0.01em;color:var(--navy-deep);}
+  .mono{font-family:'IBM Plex Mono',monospace;font-weight:600;}
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
+  .container{max-width:1220px;margin:0 auto;padding:0 28px;}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);display:flex;align-items:center;gap:8px;}
+  .eyebrow::before{content:"";width:22px;height:2px;background:var(--amber);display:inline-block;}
+
+  /* ---------- Header ---------- */
+  .site-header{position:sticky;top:0;z-index:50;background:rgba(246,247,249,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;max-width:1220px;margin:0 auto;}
+  .logo-group{display:flex;align-items:center;gap:12px;}
+  .logo-mark{width:38px;height:38px;background:linear-gradient(155deg,var(--navy) 0%, var(--blue) 100%);clip-path:polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);}
+  .logo{font-family:'Heebo',sans-serif;font-weight:900;font-size:1.3rem;color:var(--navy-deep);line-height:1;}
+  .logo span{display:block;font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:.6rem;letter-spacing:.12em;color:var(--steel);margin-top:4px;}
+  nav.main-nav{display:flex;gap:30px;font-weight:600;font-size:.94rem;}
+  nav.main-nav a{opacity:.8;transition:opacity .2s;}
+  nav.main-nav a:hover{opacity:1;color:var(--blue);}
+  .header-actions{display:flex;align-items:center;gap:12px;}
+  .phone-chip{display:flex;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:.88rem;color:#fff;background:var(--navy-deep);padding:10px 18px;border-radius:999px;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:700;font-size:.95rem;cursor:pointer;border:none;transition:transform .15s ease, box-shadow .15s ease;}
+  .btn-primary{background:var(--blue);color:#fff;box-shadow:0 6px 18px rgba(23,104,199,.28);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(23,104,199,.35);}
+  .btn-whatsapp{background:var(--green);color:#fff;box-shadow:0 6px 18px rgba(34,165,89,.3);}
+  .btn-whatsapp:hover{transform:translateY(-2px);}
+  .btn-ghost{background:transparent;color:var(--navy-deep);border:1.5px solid var(--line);}
+  .btn-ghost:hover{border-color:var(--blue);color:var(--blue);}
+  @media(max-width:860px){nav.main-nav{display:none;}}
+
+  /* ---------- Hero ---------- */
+  .hero{position:relative;overflow:hidden;min-height:560px;display:flex;align-items:center;}
+  .hero-bg{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;}
+  .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(8,42,74,.55) 0%, rgba(8,42,74,.62) 45%, rgba(8,42,74,.8) 100%);}
+  .hero-content{position:relative;z-index:2;width:100%;text-align:center;padding:60px 28px 0;}
+  .hero-stats{display:flex;justify-content:center;gap:0;margin:0 auto 26px;flex-wrap:wrap;}
+  .hero-stat{display:flex;align-items:center;gap:10px;padding:0 22px;border-inline-start:1px solid rgba(255,255,255,.25);color:#fff;}
+  .hero-stat:first-child{border-inline-start:none;}
+  .hero-stat .ico{width:26px;height:26px;color:var(--amber);flex:none;}
+  .hero-stat b{display:block;font-size:.95rem;font-weight:700;}
+  .hero-stat small{display:block;font-size:.72rem;color:#CBD9E8;}
+  .hero-call-btn{
+    display:inline-flex;align-items:center;gap:12px;
+    background:var(--green);color:#fff;
+    padding:14px 28px;border-radius:999px;
+    box-shadow:0 8px 22px rgba(34,165,89,.35);
+    transition:transform .15s ease;
+  }
+  .hero-call-btn:hover{transform:translateY(-2px);}
+  .hero-call-btn span{font-weight:700;font-size:1rem;line-height:1.3;}
+  .hero-call-btn span small{display:block;font-weight:600;font-size:.85rem;opacity:.92;font-family:'IBM Plex Mono',monospace;}
+  .hero-content .eyebrow{justify-content:center;color:#BFD6EF;}
+  .hero-content .eyebrow::before{background:var(--amber);}
+  .hero h1{color:#fff;font-size:clamp(2.1rem,4.4vw,3.3rem);line-height:1.15;margin:18px auto 16px;max-width:18ch;}
+  .hero p.lead{color:#D9E4F0;font-size:1.1rem;max-width:60ch;margin:0 auto 26px;}
+  .hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:8px;}
+
+  /* value strip */
+  .value-strip{background:var(--surface);border-bottom:1px solid var(--line);position:relative;z-index:2;}
+  .value-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:0;padding:26px 0;}
+  .value-item{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;padding:0 14px;border-inline-start:1px solid var(--line);}
+  .value-item:first-child{border-inline-start:none;}
+  .value-item .ico{width:30px;height:30px;color:var(--blue);}
+  .value-item span{font-size:.85rem;font-weight:700;color:var(--navy-deep);line-height:1.3;}
+  .value-item small{font-size:.72rem;color:var(--steel);line-height:1.4;max-width:22ch;}
+  @media(max-width:1000px){.value-grid{grid-template-columns:repeat(3,1fr);}.value-item{border-inline-start:none;border-top:1px solid var(--line);padding-top:16px;}}
+  @media(max-width:560px){.value-grid{grid-template-columns:repeat(2,1fr);}}
+
+  /* supplier strip */
+  .suppliers{background:var(--bg);padding:44px 0;border-bottom:1px solid var(--line);}
+  .suppliers .section-label{text-align:center;margin-bottom:22px;}
+  .supplier-row{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;}
+  .supplier-chip{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 24px;font-family:'Heebo',sans-serif;font-weight:700;font-size:1rem;color:var(--navy-deep);letter-spacing:.02em;}
+
+  /* ---------- Sections generic ---------- */
+  section{padding:80px 0;}
+  .section-head{max-width:640px;margin:0 0 40px;text-align:right;}
+  .section-head h2{font-size:clamp(1.6rem,2.6vw,2.2rem);margin-top:14px;}
+  .section-head p{color:var(--steel);margin-top:14px;font-size:1.02rem;max-width:70ch;}
+  .section-head .eyebrow{justify-content:flex-start;}
+
+  /* Materials */
+  .materials-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:14px;}
+  .material-tile{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px 10px;text-align:center;transition:box-shadow .2s ease, transform .2s ease, border-color .2s ease;}
+  .material-tile:hover{transform:translateY(-4px);box-shadow:0 14px 30px -16px rgba(11,59,102,.28);border-color:var(--blue);}
+  .material-code{font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:1rem;color:var(--navy-deep);display:block;}
+  .material-sub{font-size:.7rem;color:var(--steel);margin-top:6px;display:block;}
+  .material-tile.more{display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--blue);border-style:dashed;}
+  .material-tile.more .plus{width:40px;height:40px;border-radius:50%;border:1.5px dashed var(--blue);display:flex;align-items:center;justify-content:center;margin-bottom:10px;font-size:1.3rem;}
+  .pricelist-cta{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:34px;padding-top:30px;border-top:1px solid var(--line);}
+  .pricelist-cta p{font-size:.98rem;color:var(--steel);font-style:italic;}
+  @media(max-width:980px){.materials-grid{grid-template-columns:repeat(4,1fr);}}
+  @media(max-width:600px){.materials-grid{grid-template-columns:repeat(3,1fr);}}
+
+  /* Split: form + why us */
+  .split-section{padding:0;}
+  .split-grid{display:grid;grid-template-columns:1fr 1fr;min-height:640px;}
+  .split-form{background:var(--surface);padding:64px 48px;display:flex;align-items:center;}
+  form.lead-form{width:100%;max-width:440px;margin:0 auto;}
+  form.lead-form h3{font-size:1.3rem;margin-bottom:6px;}
+  form.lead-form > p{color:var(--steel);font-size:.92rem;margin-bottom:24px;}
+  .field{margin-bottom:15px;}
+  .field label{display:block;font-size:.85rem;font-weight:600;margin-bottom:6px;color:var(--navy-deep);}
+  .field input, .field select, .field textarea{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;font-family:'Assistant',sans-serif;font-size:.95rem;background:#fff;color:var(--ink);transition:border-color .2s ease;}
+  .field input:focus, .field select:focus, .field textarea:focus{outline:none;border-color:var(--blue);}
+  .field textarea{resize:vertical;min-height:80px;}
+  .row-2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .form-submit{width:100%;margin-top:4px;padding:14px;font-size:1rem;}
+  .checkbox-label{display:flex;align-items:center;gap:8px;font-size:.85rem;font-weight:500;color:var(--ink);cursor:pointer;}
+  .checkbox-label input{width:auto;accent-color:var(--blue);}
+  .form-note{font-size:.78rem;color:var(--steel);margin-top:12px;text-align:center;display:flex;align-items:center;justify-content:center;gap:6px;}
+
+  .split-why{position:relative;background:var(--navy-deep);color:#fff;padding:64px 48px;display:flex;align-items:center;overflow:hidden;}
+  .split-why-bg{position:absolute;inset:0;}
+  .split-why-bg img{width:100%;height:100%;object-fit:cover;opacity:.28;}
+  .split-why-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg, rgba(8,42,74,.97) 20%, rgba(8,42,74,.55) 100%);}
+  .split-why-content{position:relative;z-index:2;max-width:480px;margin:0 auto;}
+  .split-why-content .eyebrow{color:var(--amber);}
+  .split-why-content h2{color:#fff;font-size:clamp(1.5rem,2.4vw,2rem);margin:14px 0 22px;}
+  .why-list{display:grid;gap:14px;}
+  .why-list li{display:flex;gap:12px;align-items:flex-start;font-size:.98rem;color:#DCE6F0;}
+  .why-list .check{flex:none;width:20px;height:20px;color:var(--green);margin-top:3px;}
+  @media(max-width:900px){.split-grid{grid-template-columns:1fr;}.split-form,.split-why{padding:48px 24px;}}
+  @media(max-width:900px){.row-2{grid-template-columns:1fr;}}
+
+  /* Footer */
+  footer{background:var(--navy-deep);color:#B9C6D6;padding:36px 0;}
+  .footer-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;align-items:center;}
+  .footer-item{display:flex;align-items:center;gap:10px;font-size:.88rem;}
+  .footer-item .ico{width:18px;height:18px;color:var(--amber);flex:none;}
+  .footer-whatsapp{background:var(--green);color:#fff;padding:10px 20px;border-radius:999px;font-weight:700;font-size:.88rem;display:flex;align-items:center;gap:8px;}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+  @media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;transition:none;}html{scroll-behavior:auto;}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo-group">
+      <div class="logo-mark"></div>
+      <div class="logo">YJO PLAST<span>יבוא חומרי גלם פלסטיים</span></div>
+    </div>
+    <nav class="main-nav">
+      <a href="#">בית</a>
+      <a href="#why">למה אנחנו</a>
+      <a href="#why">שירותים</a>
+      <a href="#materials">חומרי גלם</a>
+      <a href="#about">אודות</a>
+      <a href="#contact">צור קשר</a>
+    </nav>
+    <div class="header-actions">
+      <a class="phone-chip" href="tel:0527269993">📞 052-726-9993</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-bg">
+    <img src="https://images.pexels.com/photos/34286024/pexels-photo-34286024.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="גרגירי פלסטיק ממוחזרים">
+    <img src="https://images.pexels.com/photos/36834653/pexels-photo-36834653.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="ספינת מכולות בנמל">
+  </div>
+  <div class="hero-content">
+    <div class="eyebrow">פתרונות אספקה לתעשיית הפלסטיק בישראל</div>
+    <h1>יבוא חומרי גלם פלסטיים</h1>
+    <p class="lead">חומרי גלם חדשים (פריים) וממוחזרים באיכות הגבוהה ביותר, מהיצרנים הגדולים בעולם — במחירים הכי טובים בשוק ובאספקה מהירה לכל מפעל.</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="5"/><path d="M8.5 13 7 21l5-2.5L17 21l-1.5-8"/></svg>
+        <div><b>30+</b><small>שנות ניסיון בענף</small></div>
+      </div>
+      <div class="hero-stat">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 16V6h11v10M14 9h4l3 3v4h-7"/><circle cx="7" cy="18" r="1.7"/><circle cx="17.5" cy="18" r="1.7"/></svg>
+        <div><b>אספקה מהירה</b><small>לכל רחבי הארץ</small></div>
+      </div>
+      <div class="hero-stat">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.6 12.6 12 21.2 2.8 12A4.5 4.5 0 0 1 9 5.8l3 3 3-3a4.5 4.5 0 0 1 6.4 6.4Z"/><path d="M9 9h.01"/></svg>
+        <div><b>מחירים תחרותיים</b><small>הכי טובים בשוק</small></div>
+      </div>
+    </div>
+    <a href="https://wa.me/972527269993" class="hero-call-btn">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.81.35 1.6.68 2.34a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.74-1.25a2 2 0 0 1 2.11-.45c.74.33 1.53.56 2.34.68A2 2 0 0 1 22 16.92z"/></svg>
+      <span>דברו איתנו עכשיו<small>052-726-9993</small></span>
+    </a>
+  </div>
+</section>
+
+<div class="value-strip">
+  <div class="container value-grid">
+    <div class="value-item">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2 4 6v6c0 5 3.4 8.7 8 10 4.6-1.3 8-5 8-10V6z"/><path d="m9 12 2 2 4-4"/></svg>
+      <span>איכות ללא פשרות</span>
+      <small>חומרי גלם באיכות הגבוהה ביותר לתוצאות מושלמות</small>
+    </div>
+    <div class="value-item">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M9 12h6M12 9v6"/></svg>
+      <span>מחירים אטרקטיביים</span>
+      <small>המחירים הטובים ביותר הודות לייבוא ישיר</small>
+    </div>
+    <div class="value-item">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 16V6h11v10M14 9h4l3 3v4h-7"/><circle cx="7" cy="18" r="1.7"/><circle cx="17.5" cy="18" r="1.7"/></svg>
+      <span>אספקות מהירות</span>
+      <small>זמני אספקה קצרים ושירות יעיל</small>
+    </div>
+    <div class="value-item">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M8 11V7a4 4 0 0 1 8 0v4M6 21h12l-1-10H7z"/></svg>
+      <span>ייבוא ישיר</span>
+      <small>עבודה ישירה מול היצרנים הגדולים בעולם</small>
+    </div>
+    <div class="value-item">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="9" cy="8" r="3"/><path d="M2 21v-1a6 6 0 0 1 12 0v1"/><circle cx="18" cy="9" r="2.4"/><path d="M15.5 21v-1a5 5 0 0 1 6-4.9"/></svg>
+      <span>ליווי מקצועי</span>
+      <small>צוות מומחים זמין לכל שאלה וייעוץ מקצועי</small>
+    </div>
+    <div class="value-item">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/><path d="m9 15 2 2 4-4"/></svg>
+      <span>אספקה רציפה</span>
+      <small>מלאים זמינים ואספקה רציפה לאורך זמן</small>
+    </div>
+  </div>
+</div>
+
+<div class="suppliers">
+  <div class="container">
+    <div class="section-label eyebrow">אנו מייבאים מהיצרנים הגדולים בעולם</div>
+    <div class="supplier-row">
+      <span class="supplier-chip">Saudi Aramco</span>
+      <span class="supplier-chip">SABIC</span>
+      <span class="supplier-chip">Borouge</span>
+      <span class="supplier-chip">ExxonMobil</span>
+      <span class="supplier-chip">Dow</span>
+      <span class="supplier-chip">LyondellBasell</span>
+      <span class="supplier-chip">INEOS</span>
+    </div>
+  </div>
+</div>
+
+<section id="materials">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">מגוון החומרים שאנו מספקים</div>
+      <h2>כל סוגי הפולימרים, במקום אחד</h2>
+      <p>מייבאים עבורכם את כל סוגי חומרי הגלם המובילים בתעשייה — חדשים וממוחזרים כאחד.</p>
+    </div>
+    <div class="materials-grid">
+      <div class="material-tile reveal"><span class="material-code">HDPE</span><span class="material-sub">פוליאתילן קשיח</span></div>
+      <div class="material-tile reveal"><span class="material-code">LDPE</span><span class="material-sub">פוליאתילן רך</span></div>
+      <div class="material-tile reveal"><span class="material-code">LLDPE</span><span class="material-sub">פוליאתילן ליניארי</span></div>
+      <div class="material-tile reveal"><span class="material-code">PP</span><span class="material-sub">הזרקה | רפיה | סיב</span></div>
+      <div class="material-tile reveal"><span class="material-code">PET</span><span class="material-sub">שקוף לאריזות</span></div>
+      <div class="material-tile reveal"><span class="material-code">ABS</span><span class="material-sub">קשיח ועמיד</span></div>
+      <div class="material-tile reveal"><span class="material-code">PS</span><span class="material-sub">GPPS / HIPS</span></div>
+
+      <div class="material-tile reveal"><span class="material-code">PC</span><span class="material-sub">פוליקרבונט</span></div>
+      <div class="material-tile reveal"><span class="material-code">PA6 / PA66</span><span class="material-sub">ניילון</span></div>
+      <div class="material-tile reveal"><span class="material-code">EVA</span><span class="material-sub">גמיש ורך</span></div>
+      <div class="material-tile reveal"><span class="material-code">PVC</span><span class="material-sub">קשיח / גמיש</span></div>
+      <div class="material-tile reveal"><span class="material-code">POM</span><span class="material-sub">דיוק הנדסי</span></div>
+      <div class="material-tile reveal"><span class="material-code">TPU / TPE</span><span class="material-sub">אלסטומרים</span></div>
+      <div class="material-tile more reveal"><div class="plus">+</div><span class="material-code">ועוד חומרים</span><span class="material-sub">לפי דרישת הלקוח</span></div>
+    </div>
+    <div class="pricelist-cta reveal">
+      <p>פתרונות מותאמים אישית לכל ייעוד שתרצו</p>
+      <a href="#contact" class="btn btn-primary" id="pricelistBtn">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2Z"/><path d="M9 13h6M9 17h6M9 9h1"/></svg>
+        קבלו את המחירון המלא שלנו
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="split-section" id="why">
+  <div class="split-grid">
+    <div class="split-form">
+      <form class="lead-form reveal" id="leadForm" action="https://formspree.io/f/xgogbkvb" method="POST">
+        <h3>קבלו הצעת מחיר מותאמת אישית</h3>
+        <p>השאירו פרטים ונחזור אליכם עוד היום</p>
+        <div class="row-2">
+          <div class="field"><label for="name">שם מלא</label><input id="name" name="name" type="text" placeholder="לדוגמה: יוסי כהן" required></div>
+          <div class="field"><label for="company">שם חברה</label><input id="company" name="company" type="text" placeholder="שם החברה"></div>
+        </div>
+        <div class="row-2">
+          <div class="field"><label for="phone">טלפון</label><input id="phone" name="phone" type="tel" placeholder="05X-XXXXXXX" required></div>
+          <div class="field"><label for="material">סוג חומר מבוקש</label>
+            <select id="material" name="material">
+              <option>HDPE / LDPE / LLDPE</option>
+              <option>PP</option>
+              <option>PVC</option>
+              <option>PS / ABS</option>
+              <option>PET</option>
+              <option>חומר ממוחזר</option>
+              <option>אחר / לייעוץ</option>
+            </select>
+          </div>
+        </div>
+        <div class="field"><label for="message">הודעה נוספת</label><textarea id="message" name="message" placeholder="כמות משוערת, ייעוד, מועד אספקה רצוי..."></textarea></div>
+        <div class="field checkbox-field">
+          <label class="checkbox-label"><input type="checkbox" id="wantsPricelist" name="wantsPricelist"> אשמח לקבל גם את המחירון המלא במייל</label>
+        </div>
+        <input type="hidden" name="_subject" id="formSubject" value="פנייה חדשה מאתר YJO PLAST">
+        <button type="submit" class="btn btn-primary form-submit" id="submitBtn">שלח בקשה</button>
+        <p id="formStatus" style="display:none;text-align:center;font-size:.88rem;font-weight:600;margin-top:10px;"></p>
+        <p class="form-note">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+          המידע שלכם מוגן ולא יועבר לצד שלישי
+        </p>
+      </form>
+    </div>
+    <div class="split-why">
+      <div class="split-why-bg">
+        <img src="https://images.pexels.com/photos/11500419/pexels-photo-11500419.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="מלגזות במחסן תעשייתי" loading="lazy">
+      </div>
+      <div class="split-why-content reveal">
+        <div class="eyebrow">למה לעבוד איתנו</div>
+        <h2>30 שנות ניסיון, בשירות המפעל שלכם</h2>
+        <ul class="why-list">
+          <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> למעלה מ-30 שנות ניסיון בענף הפלסטיק בישראל</li>
+          <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> קשרים ישירים עם היצרנים הגדולים בעולם</li>
+          <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> מחירים אטרקטיביים ללא פשרה על איכות</li>
+          <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> זמני אספקה מהירים ואמינים</li>
+          <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> שירות אישי וליווי מקצועי צמוד לכל לקוח</li>
+          <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> פתרונות לחומרים חדשים וגם ממוחזרים</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="container footer-inner">
+    <div class="footer-item">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      <span>משלוחים לכל רחבי הארץ</span>
+    </div>
+    <div class="footer-item">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+      <span>אספקה מהירה</span>
+    </div>
+    <div class="footer-item">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="m4 4 8 9 8-9"/></svg>
+      <a href="mailto:yarin.yjo@gmail.com">yarin.yjo@gmail.com</a>
+    </div>
+    <div class="footer-item">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.81.35 1.6.68 2.34a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.74-1.25a2 2 0 0 1 2.11-.45c.74.33 1.53.56 2.34.68A2 2 0 0 1 22 16.92z"/></svg>
+      <a href="tel:0527269993">052-726-9993</a>
+    </div>
+    <a href="https://wa.me/972527269993" class="footer-whatsapp">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.71.45 3.38 1.3 4.85L2 22l5.4-1.41a9.9 9.9 0 0 0 4.64 1.18h.01c5.46 0 9.91-4.45 9.91-9.9 0-2.65-1.03-5.13-2.9-7C17.18 3.04 14.7 2 12.04 2Z"/></svg>
+      052-726-9993
+    </a>
+  </div>
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  revealEls.forEach(el=>io.observe(el));
+
+  const form = document.getElementById('leadForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const statusEl = document.getElementById('formStatus');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    const wantsPricelist = document.getElementById('wantsPricelist').checked;
+    document.getElementById('formSubject').value = wantsPricelist
+      ? 'בקשת מחירון מלא + פנייה מאתר YJO PLAST'
+      : 'פנייה חדשה מאתר YJO PLAST';
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'שולח...';
+    statusEl.style.display = 'none';
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(response => {
+      if (response.ok) {
+        statusEl.textContent = 'הפרטים נשלחו בהצלחה! נחזור אליכם בהקדם.';
+        statusEl.style.color = 'var(--green)';
+        form.reset();
+      } else {
+        throw new Error('שגיאת שרת');
+      }
+    }).catch(() => {
+      statusEl.textContent = 'לא הצלחנו לשלוח — אפשר גם להתקשר ישירות ל-052-726-9993.';
+      statusEl.style.color = '#C0392B';
+    }).finally(() => {
+      statusEl.style.display = 'block';
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'שלח בקשה';
+    });
+  });
+
+  const pricelistBtn = document.getElementById('pricelistBtn');
+  if(pricelistBtn){
+    pricelistBtn.addEventListener('click', function(){
+      setTimeout(()=>{ const cb = document.getElementById('wantsPricelist'); if(cb) cb.checked = true; }, 400);
+    });
+  }
+</script>
+
+</body>
+</html>
